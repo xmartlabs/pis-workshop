@@ -1,0 +1,40 @@
+{
+  "messages": [
+    {
+      "id": "1",
+      "content": "Don't forget: wash your clothes",
+      "due_date": "2022-08-19T18:38:58.278Z",
+      "is_complete": false
+    },
+    {
+      "id": "2",
+      "content": "Study for my exam",
+      "due_date": "2022-08-20T10:00:58.278Z",
+      "is_complete": true
+    },
+    {
+      "id": "3",
+      "content": "Take out the trash",
+      "due_date": "2022-05-03T09:00:00.278Z",
+      "is_complete": false
+    },
+    {
+      "id": "4",
+      "content": "Take out the trash",
+      "due_date": "2022-03-01T18:38:58.278Z",
+      "is_complete": false
+    },
+    {
+      "id": "c78b",
+      "content": "eto es el pei",
+      "due_date": "+021995-02-12T03:00:00.000Z",
+      "is_complete": false
+    },
+    {
+      "id": "d9e1",
+      "content": "2",
+      "due_date": "0002-02-03T00:00:00.000Z",
+      "is_complete": true
+    }
+  ]
+}
