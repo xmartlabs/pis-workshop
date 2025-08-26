@@ -186,6 +186,7 @@ We'll replace the content in our home for these lines:
 // src/pages/homes/home.tsx
 import { useEffect, useState } from "react";
 import { MessageController } from "networking/controllers/message-controller";
+import type { Message } from "@/networking/types/message";
 
 const Home = () => {
   const [messages, setMessages] = useState<Message[]>([]);
