@@ -270,12 +270,12 @@ const [idLastMessage, setIdLastMessage] = useState<string>("");
 // under useEffect add:
 const validValues = content && dueDate;
 
-const handleSubmit = async (e: any) => {
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
 
   if (idLastMessage && content && dueDate) {
     const newMessage = await MessageController.createMessage({
-      id: idLastMessage.toString(),
+      id: Number(idLastMessage),
       content,
       dueDate: new Date(dueDate),
       isComplete,
@@ -291,7 +291,13 @@ const handleSubmit = async (e: any) => {
 
 //and below the Messages' div add:
 <div className="mt-8 rounded-lg border border-neutral-200 bg-white p-6 shadow-sm">
-  <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
+  <form
+    onSubmit={(e) => {
+      e.preventDefault();
+      handleSubmit(e).catch(console.error);
+    }}
+    className="grid grid-cols-1 gap-4"
+  >
     <div className="flex flex-col gap-1">
       <label htmlFor="id" className="text-sm text-neutral-700">
         Id
