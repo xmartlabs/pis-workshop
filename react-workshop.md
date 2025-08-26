@@ -6,11 +6,9 @@
 
 There's a multitude of ways to install and manage Node versions. Usually, projects will require you to be able to spin up many versions of Node. It's simply too annoying to uninstall and install a different version each time. That's why there exist different version managers that support Node. Some of them are `nodenv`, `nvm` and `asdf`.
 
-At Xmartlabs we've mostly used [nodenv](https://github.com/nodenv/nodenv), so these next instructions take for granted that you have it installed on your machine.
-
 ```sh
-nodenv install 20.8.1
-npm i -g npm@10.8.2
+nvm install 22.18.0
+npm i -g npm@10.9.3
 ```
 
 ### Cloning the template
