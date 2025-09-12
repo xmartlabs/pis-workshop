@@ -1,0 +1,18 @@
+
+services:
+  nextapp:
+    build: ./
+    ports:
+      - "3080:3000"
+    depends_on:
+      - jsondb
+    environment:
+      - JSON_SERVER=http://jsondb
+
+  jsondb:
+    image: clue/json-server:latest
+    volumes:
+      - ./db.json:/data/db.json
+    command: ["--watch", "/data/db.json"]
+    ports:
+      - "4000:80"
