@@ -76,7 +76,7 @@ Now, add sample data inside:
 Let's now start our server:
 
 ```sh
-npx json-server --watch db.json -p 3001
+npx json-server --watch db.json -p 4000
 ```
 
 It should output something like:
