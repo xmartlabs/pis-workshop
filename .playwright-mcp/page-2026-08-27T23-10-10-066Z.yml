@@ -1,0 +1,205 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - navigation [ref=f3e3]:
+      - link "🎬 Watchlist" [ref=f3e4] [cursor=pointer]:
+        - /url: /
+      - list [ref=f3e5]:
+        - listitem [ref=f3e6]:
+          - link "Populares" [ref=f3e7] [cursor=pointer]:
+            - /url: /populares
+        - listitem [ref=f3e8]:
+          - link "Buscar" [ref=f3e9] [cursor=pointer]:
+            - /url: /buscar
+        - listitem [ref=f3e10]:
+          - link "Mi watchlist" [ref=f3e11] [cursor=pointer]:
+            - /url: /watchlist
+  - main [ref=f3e12]:
+    - generic [ref=f3e13]:
+      - generic [ref=f3e14]:
+        - heading "Buscar" [level=1] [ref=f3e15]
+        - paragraph [ref=f3e16]: "Recarga esta pagina con F5 y mira el reloj: cambia siempre, porque el HTML se genera de nuevo en cada visita."
+        - paragraph [ref=f3e17]: SSR · HTML generado recien, en este request · 08:10:09 p. m.
+      - generic [ref=f3e18]:
+        - textbox "Titulo de una pelicula…" [ref=f3e19]: matrix
+        - button "Buscar" [ref=f3e20]
+      - paragraph [ref=f3e21]: 20 resultados para “matrix”
+      - generic [ref=f3e22]:
+        - link "Poster de Matrix Matrix 1999 ★ 8.3" [ref=f3e23] [cursor=pointer]:
+          - /url: /pelicula/603
+          - generic [ref=f3e24]:
+            - img "Poster de Matrix" [ref=f3e26]
+            - generic [ref=f3e27]:
+              - paragraph [ref=f3e28]: Matrix
+              - generic [ref=f3e29]:
+                - generic [ref=f3e30]: "1999"
+                - generic [ref=f3e31]: ★ 8.3
+        - link "Poster de Matrix Reloaded Matrix Reloaded 2003 ★ 7.1" [ref=f3e32] [cursor=pointer]:
+          - /url: /pelicula/604
+          - generic [ref=f3e33]:
+            - img "Poster de Matrix Reloaded" [ref=f3e35]
+            - generic [ref=f3e36]:
+              - paragraph [ref=f3e37]: Matrix Reloaded
+              - generic [ref=f3e38]:
+                - generic [ref=f3e39]: "2003"
+                - generic [ref=f3e40]: ★ 7.1
+        - link "Poster de Matrix Revolutions Matrix Revolutions 2003 ★ 6.8" [ref=f3e41] [cursor=pointer]:
+          - /url: /pelicula/605
+          - generic [ref=f3e42]:
+            - img "Poster de Matrix Revolutions" [ref=f3e44]
+            - generic [ref=f3e45]:
+              - paragraph [ref=f3e46]: Matrix Revolutions
+              - generic [ref=f3e47]:
+                - generic [ref=f3e48]: "2003"
+                - generic [ref=f3e49]: ★ 6.8
+        - link "Poster de Matrix Resurrections Matrix Resurrections 2021 ★ 6.3" [ref=f3e50] [cursor=pointer]:
+          - /url: /pelicula/624860
+          - generic [ref=f3e51]:
+            - img "Poster de Matrix Resurrections" [ref=f3e53]
+            - generic [ref=f3e54]:
+              - paragraph [ref=f3e55]: Matrix Resurrections
+              - generic [ref=f3e56]:
+                - generic [ref=f3e57]: "2021"
+                - generic [ref=f3e58]: ★ 6.3
+        - 'link "Poster de Matrix: Descubre lo increíble Matrix: Descubre lo increíble 2001 ★ 6.9" [ref=f3e59] [cursor=pointer]':
+          - /url: /pelicula/14543
+          - generic [ref=f3e60]:
+            - 'img "Poster de Matrix: Descubre lo increíble" [ref=f3e62]'
+            - generic [ref=f3e63]:
+              - paragraph [ref=f3e64]: "Matrix: Descubre lo increíble"
+              - generic [ref=f3e65]:
+                - generic [ref=f3e66]: "2001"
+                - generic [ref=f3e67]: ★ 6.9
+        - link "Poster de Sexual Matrix Sexual Matrix 2000 ★ 6.4" [ref=f3e68] [cursor=pointer]:
+          - /url: /pelicula/51767
+          - generic [ref=f3e69]:
+            - img "Poster de Sexual Matrix" [ref=f3e71]
+            - generic [ref=f3e72]:
+              - paragraph [ref=f3e73]: Sexual Matrix
+              - generic [ref=f3e74]:
+                - generic [ref=f3e75]: "2000"
+                - generic [ref=f3e76]: ★ 6.4
+        - link "Poster de Generación Matrix Generación Matrix 2023 ★ 6.9" [ref=f3e77] [cursor=pointer]:
+          - /url: /pelicula/1217455
+          - generic [ref=f3e78]:
+            - img "Poster de Generación Matrix" [ref=f3e80]
+            - generic [ref=f3e81]:
+              - paragraph [ref=f3e82]: Generación Matrix
+              - generic [ref=f3e83]:
+                - generic [ref=f3e84]: "2023"
+                - generic [ref=f3e85]: ★ 6.9
+        - 'link "Poster de Armitage: Poly-Matrix Armitage: Poly-Matrix 1996 ★ 6.5" [ref=f3e86] [cursor=pointer]':
+          - /url: /pelicula/33322
+          - generic [ref=f3e87]:
+            - 'img "Poster de Armitage: Poly-Matrix" [ref=f3e89]'
+            - generic [ref=f3e90]:
+              - paragraph [ref=f3e91]: "Armitage: Poly-Matrix"
+              - generic [ref=f3e92]:
+                - generic [ref=f3e93]: "1996"
+                - generic [ref=f3e94]: ★ 6.5
+        - link "Poster de Dinosaur Matrix Dinosaur Matrix 1985 ★ 0.0" [ref=f3e95] [cursor=pointer]:
+          - /url: /pelicula/790345
+          - generic [ref=f3e96]:
+            - img "Poster de Dinosaur Matrix" [ref=f3e98]
+            - generic [ref=f3e99]:
+              - paragraph [ref=f3e100]: Dinosaur Matrix
+              - generic [ref=f3e101]:
+                - generic [ref=f3e102]: "1985"
+                - generic [ref=f3e103]: ★ 0.0
+        - link "Poster de Matrix Matrix 1971 ★ 7.3" [ref=f3e104] [cursor=pointer]:
+          - /url: /pelicula/411948
+          - generic [ref=f3e105]:
+            - img "Poster de Matrix" [ref=f3e107]
+            - generic [ref=f3e108]:
+              - paragraph [ref=f3e109]: Matrix
+              - generic [ref=f3e110]:
+                - generic [ref=f3e111]: "1971"
+                - generic [ref=f3e112]: ★ 7.3
+        - link "Poster de Buhera mátrix Buhera mátrix 2007 ★ 6.1" [ref=f3e113] [cursor=pointer]:
+          - /url: /pelicula/141225
+          - generic [ref=f3e114]:
+            - img "Poster de Buhera mátrix" [ref=f3e116]
+            - generic [ref=f3e117]:
+              - paragraph [ref=f3e118]: Buhera mátrix
+              - generic [ref=f3e119]:
+                - generic [ref=f3e120]: "2007"
+                - generic [ref=f3e121]: ★ 6.1
+        - link "Poster de Matrix Matrix 1973 ★ 6.4" [ref=f3e122] [cursor=pointer]:
+          - /url: /pelicula/373223
+          - generic [ref=f3e123]:
+            - img "Poster de Matrix" [ref=f3e125]
+            - generic [ref=f3e126]:
+              - paragraph [ref=f3e127]: Matrix
+              - generic [ref=f3e128]:
+                - generic [ref=f3e129]: "1973"
+                - generic [ref=f3e130]: ★ 6.4
+        - link "Poster de Matrix Matrix 1973 ★ 6.8" [ref=f3e131] [cursor=pointer]:
+          - /url: /pelicula/775293
+          - generic [ref=f3e132]:
+            - img "Poster de Matrix" [ref=f3e134]
+            - generic [ref=f3e135]:
+              - paragraph [ref=f3e136]: Matrix
+              - generic [ref=f3e137]:
+                - generic [ref=f3e138]: "1973"
+                - generic [ref=f3e139]: ★ 6.8
+        - link "Poster de Matrix Matrix 1998 ★ 7.1" [ref=f3e140] [cursor=pointer]:
+          - /url: /pelicula/555879
+          - generic [ref=f3e141]:
+            - img "Poster de Matrix" [ref=f3e143]
+            - generic [ref=f3e144]:
+              - paragraph [ref=f3e145]: Matrix
+              - generic [ref=f3e146]:
+                - generic [ref=f3e147]: "1998"
+                - generic [ref=f3e148]: ★ 7.1
+        - link "Poster de The Matrix Recalibrated The Matrix Recalibrated 2004 ★ 7.0" [ref=f3e149] [cursor=pointer]:
+          - /url: /pelicula/221495
+          - generic [ref=f3e150]:
+            - img "Poster de The Matrix Recalibrated" [ref=f3e152]
+            - generic [ref=f3e153]:
+              - paragraph [ref=f3e154]: The Matrix Recalibrated
+              - generic [ref=f3e155]:
+                - generic [ref=f3e156]: "2004"
+                - generic [ref=f3e157]: ★ 7.0
+        - link "Poster de Making \"The Matrix\" Making \"The Matrix\" 1999 ★ 7.4" [ref=f3e158] [cursor=pointer]:
+          - /url: /pelicula/684431
+          - generic [ref=f3e159]:
+            - img "Poster de Making \"The Matrix\"" [ref=f3e161]
+            - generic [ref=f3e162]:
+              - paragraph [ref=f3e163]: Making "The Matrix"
+              - generic [ref=f3e164]:
+                - generic [ref=f3e165]: "1999"
+                - generic [ref=f3e166]: ★ 7.4
+        - link "sin poster The Matrix 5 ★ 0.0" [ref=f3e167] [cursor=pointer]:
+          - /url: /pelicula/1268926
+          - generic [ref=f3e168]:
+            - generic [ref=f3e169]: sin poster
+            - generic [ref=f3e171]:
+              - paragraph [ref=f3e172]: The Matrix 5
+              - generic [ref=f3e173]: ★ 0.0
+        - link "Poster de Die Luther Matrix Die Luther Matrix 2017 ★ 4.0" [ref=f3e175] [cursor=pointer]:
+          - /url: /pelicula/452828
+          - generic [ref=f3e176]:
+            - img "Poster de Die Luther Matrix" [ref=f3e178]
+            - generic [ref=f3e179]:
+              - paragraph [ref=f3e180]: Die Luther Matrix
+              - generic [ref=f3e181]:
+                - generic [ref=f3e182]: "2017"
+                - generic [ref=f3e183]: ★ 4.0
+        - link "Poster de The Matrix Reloaded Revisited The Matrix Reloaded Revisited 2004 ★ 6.8" [ref=f3e184] [cursor=pointer]:
+          - /url: /pelicula/591955
+          - generic [ref=f3e185]:
+            - img "Poster de The Matrix Reloaded Revisited" [ref=f3e187]
+            - generic [ref=f3e188]:
+              - paragraph [ref=f3e189]: The Matrix Reloaded Revisited
+              - generic [ref=f3e190]:
+                - generic [ref=f3e191]: "2004"
+                - generic [ref=f3e192]: ★ 6.8
+        - link "Poster de Matrix II Matrix II 1974 ★ 0.0" [ref=f3e193] [cursor=pointer]:
+          - /url: /pelicula/1456523
+          - generic [ref=f3e194]:
+            - img "Poster de Matrix II" [ref=f3e196]
+            - generic [ref=f3e197]:
+              - paragraph [ref=f3e198]: Matrix II
+              - generic [ref=f3e199]:
+                - generic [ref=f3e200]: "1974"
+                - generic [ref=f3e201]: ★ 0.0
+  - alert [ref=f3e202]

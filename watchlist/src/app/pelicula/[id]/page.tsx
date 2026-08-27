@@ -2,7 +2,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { AddToWatchlistForm } from "@/components/add-to-watchlist-form";
-import { RenderStamp } from "@/components/render-stamp";
 import { Badge } from "@/components/ui/badge";
 import { posterUrl, releaseYear } from "@/lib/movies";
 import { getMovie, getPopularMovies } from "@/lib/tmdb";
@@ -108,7 +107,11 @@ export default async function PeliculaPage({
         </div>
       </div>
 
-      <RenderStamp mode="SSG" />
+      {/* Aca NO ponemos un <RenderStamp/>. Toda Server Action vuelve a
+          renderizar la pagina en la que estas, asi que el reloj se
+          actualizaria al agregar la pelicula y parecerian datos frescos
+          cuando en realidad la pagina si es estatica. Los relojes viven en
+          /populares y /buscar, que es donde la comparacion es honesta. */}
     </article>
   );
 }

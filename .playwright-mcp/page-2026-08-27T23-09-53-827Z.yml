@@ -1,0 +1,208 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - navigation [ref=f2e3]:
+      - link "🎬 Watchlist" [ref=f2e4] [cursor=pointer]:
+        - /url: /
+      - list [ref=f2e5]:
+        - listitem [ref=f2e6]:
+          - link "Populares" [ref=f2e7] [cursor=pointer]:
+            - /url: /populares
+        - listitem [ref=f2e8]:
+          - link "Buscar" [ref=f2e9] [cursor=pointer]:
+            - /url: /buscar
+        - listitem [ref=f2e10]:
+          - link "Mi watchlist" [ref=f2e11] [cursor=pointer]:
+            - /url: /watchlist
+  - main [ref=f2e12]:
+    - generic [ref=f2e13]:
+      - generic [ref=f2e14]:
+        - heading "Peliculas populares" [level=1] [ref=f2e15]
+        - paragraph [ref=f2e16]: "Estos datos los trajo el server desde TMDB. Abri las herramientas de desarrollo, pestana Network, y recarga: no vas a ver ningun pedido a TMDB. Ya venia todo en el HTML."
+        - paragraph [ref=f2e17]: ISR · HTML generado en el build, se regenera cada 1 hora · 08:08:10 p. m.
+      - generic [ref=f2e18]:
+        - generic [ref=f2e19]:
+          - textbox "Filtrar las que ya bajaron del server…" [ref=f2e20]
+          - paragraph [ref=f2e21]: CSR · corriendo en tu browser · 8:09:53 p. m.
+        - paragraph [ref=f2e22]: Mostrando 20 de 20
+        - generic [ref=f2e23]:
+          - 'link "Poster de Spider-Man: Brand New Day Spider-Man: Brand New Day 2026 ★ 7.9" [ref=f2e24] [cursor=pointer]':
+            - /url: /pelicula/969681
+            - generic [ref=f2e25]:
+              - 'img "Poster de Spider-Man: Brand New Day" [ref=f2e27]'
+              - generic [ref=f2e28]:
+                - paragraph [ref=f2e29]: "Spider-Man: Brand New Day"
+                - generic [ref=f2e30]:
+                  - generic [ref=f2e31]: "2026"
+                  - generic [ref=f2e32]: ★ 7.9
+          - link "Poster de La Odisea La Odisea 2026 ★ 8.0" [ref=f2e33] [cursor=pointer]:
+            - /url: /pelicula/1368337
+            - generic [ref=f2e34]:
+              - img "Poster de La Odisea" [ref=f2e36]
+              - generic [ref=f2e37]:
+                - paragraph [ref=f2e38]: La Odisea
+                - generic [ref=f2e39]:
+                  - generic [ref=f2e40]: "2026"
+                  - generic [ref=f2e41]: ★ 8.0
+          - link "Poster de El motín El motín 2026 ★ 6.4" [ref=f2e42] [cursor=pointer]:
+            - /url: /pelicula/1288445
+            - generic [ref=f2e43]:
+              - img "Poster de El motín" [ref=f2e45]
+              - generic [ref=f2e46]:
+                - paragraph [ref=f2e47]: El motín
+                - generic [ref=f2e48]:
+                  - generic [ref=f2e49]: "2026"
+                  - generic [ref=f2e50]: ★ 6.4
+          - link "Poster de La captura La captura 2026 ★ 8.7" [ref=f2e51] [cursor=pointer]:
+            - /url: /pelicula/1621552
+            - generic [ref=f2e52]:
+              - img "Poster de La captura" [ref=f2e54]
+              - generic [ref=f2e55]:
+                - paragraph [ref=f2e56]: La captura
+                - generic [ref=f2e57]:
+                  - generic [ref=f2e58]: "2026"
+                  - generic [ref=f2e59]: ★ 8.7
+          - link "Poster de La señal del apocalipsis La señal del apocalipsis 2026 ★ 5.6" [ref=f2e60] [cursor=pointer]:
+            - /url: /pelicula/1323244
+            - generic [ref=f2e61]:
+              - img "Poster de La señal del apocalipsis" [ref=f2e63]
+              - generic [ref=f2e64]:
+                - paragraph [ref=f2e65]: La señal del apocalipsis
+                - generic [ref=f2e66]:
+                  - generic [ref=f2e67]: "2026"
+                  - generic [ref=f2e68]: ★ 5.6
+          - link "Poster de Toy Story 5 Toy Story 5 2026 ★ 8.2" [ref=f2e69] [cursor=pointer]:
+            - /url: /pelicula/1084244
+            - generic [ref=f2e70]:
+              - img "Poster de Toy Story 5" [ref=f2e72]
+              - generic [ref=f2e73]:
+                - paragraph [ref=f2e74]: Toy Story 5
+                - generic [ref=f2e75]:
+                  - generic [ref=f2e76]: "2026"
+                  - generic [ref=f2e77]: ★ 8.2
+          - link "Poster de Obsesión Obsesión 2026 ★ 8.2" [ref=f2e78] [cursor=pointer]:
+            - /url: /pelicula/1339713
+            - generic [ref=f2e79]:
+              - img "Poster de Obsesión" [ref=f2e81]
+              - generic [ref=f2e82]:
+                - paragraph [ref=f2e83]: Obsesión
+                - generic [ref=f2e84]:
+                  - generic [ref=f2e85]: "2026"
+                  - generic [ref=f2e86]: ★ 8.2
+          - link "Poster de Sunrise. El último amanecer Sunrise. El último amanecer 2026 ★ 7.9" [ref=f2e87] [cursor=pointer]:
+            - /url: /pelicula/1516698
+            - generic [ref=f2e88]:
+              - img "Poster de Sunrise. El último amanecer" [ref=f2e90]
+              - generic [ref=f2e91]:
+                - paragraph [ref=f2e92]: Sunrise. El último amanecer
+                - generic [ref=f2e93]:
+                  - generic [ref=f2e94]: "2026"
+                  - generic [ref=f2e95]: ★ 7.9
+          - link "Poster de Vaiana Vaiana 2026 ★ 6.1" [ref=f2e96] [cursor=pointer]:
+            - /url: /pelicula/1108427
+            - generic [ref=f2e97]:
+              - img "Poster de Vaiana" [ref=f2e99]
+              - generic [ref=f2e100]:
+                - paragraph [ref=f2e101]: Vaiana
+                - generic [ref=f2e102]:
+                  - generic [ref=f2e103]: "2026"
+                  - generic [ref=f2e104]: ★ 6.1
+          - link "Poster de Minions & Monsters Minions & Monsters 2026 ★ 7.6" [ref=f2e105] [cursor=pointer]:
+            - /url: /pelicula/1315772
+            - generic [ref=f2e106]:
+              - img "Poster de Minions & Monsters" [ref=f2e108]
+              - generic [ref=f2e109]:
+                - paragraph [ref=f2e110]: Minions & Monsters
+                - generic [ref=f2e111]:
+                  - generic [ref=f2e112]: "2026"
+                  - generic [ref=f2e113]: ★ 7.6
+          - 'link "Poster de Spider-Man: No Way Home Spider-Man: No Way Home 2021 ★ 7.9" [ref=f2e114] [cursor=pointer]':
+            - /url: /pelicula/634649
+            - generic [ref=f2e115]:
+              - 'img "Poster de Spider-Man: No Way Home" [ref=f2e117]'
+              - generic [ref=f2e118]:
+                - paragraph [ref=f2e119]: "Spider-Man: No Way Home"
+                - generic [ref=f2e120]:
+                  - generic [ref=f2e121]: "2021"
+                  - generic [ref=f2e122]: ★ 7.9
+          - link "Poster de Hotel Desire Hotel Desire 2011 ★ 6.2" [ref=f2e123] [cursor=pointer]:
+            - /url: /pelicula/82023
+            - generic [ref=f2e124]:
+              - img "Poster de Hotel Desire" [ref=f2e126]
+              - generic [ref=f2e127]:
+                - paragraph [ref=f2e128]: Hotel Desire
+                - generic [ref=f2e129]:
+                  - generic [ref=f2e130]: "2011"
+                  - generic [ref=f2e131]: ★ 6.2
+          - link "Poster de Colony Colony 2026 ★ 8.1" [ref=f2e132] [cursor=pointer]:
+            - /url: /pelicula/1375646
+            - generic [ref=f2e133]:
+              - img "Poster de Colony" [ref=f2e135]
+              - generic [ref=f2e136]:
+                - paragraph [ref=f2e137]: Colony
+                - generic [ref=f2e138]:
+                  - generic [ref=f2e139]: "2026"
+                  - generic [ref=f2e140]: ★ 8.1
+          - link "Poster de 喪服の女 崩れる 喪服の女 崩れる 2001 ★ 4.5" [ref=f2e141] [cursor=pointer]:
+            - /url: /pelicula/391312
+            - generic [ref=f2e142]:
+              - img "Poster de 喪服の女 崩れる" [ref=f2e144]
+              - generic [ref=f2e145]:
+                - paragraph [ref=f2e146]: 喪服の女 崩れる
+                - generic [ref=f2e147]:
+                  - generic [ref=f2e148]: "2001"
+                  - generic [ref=f2e149]: ★ 4.5
+          - link "Poster de Pinocho esta Desquiciado Pinocho esta Desquiciado 2026 ★ 6.8" [ref=f2e150] [cursor=pointer]:
+            - /url: /pelicula/1232569
+            - generic [ref=f2e151]:
+              - img "Poster de Pinocho esta Desquiciado" [ref=f2e153]
+              - generic [ref=f2e154]:
+                - paragraph [ref=f2e155]: Pinocho esta Desquiciado
+                - generic [ref=f2e156]:
+                  - generic [ref=f2e157]: "2026"
+                  - generic [ref=f2e158]: ★ 6.8
+          - link "Poster de 愛のぬくもり 愛のぬくもり 2024 ★ 6.2" [ref=f2e159] [cursor=pointer]:
+            - /url: /pelicula/1285366
+            - generic [ref=f2e160]:
+              - img "Poster de 愛のぬくもり" [ref=f2e162]
+              - generic [ref=f2e163]:
+                - paragraph [ref=f2e164]: 愛のぬくもり
+                - generic [ref=f2e165]:
+                  - generic [ref=f2e166]: "2024"
+                  - generic [ref=f2e167]: ★ 6.2
+          - link "Poster de Backrooms Backrooms 2026 ★ 7.1" [ref=f2e168] [cursor=pointer]:
+            - /url: /pelicula/1083381
+            - generic [ref=f2e169]:
+              - img "Poster de Backrooms" [ref=f2e171]
+              - generic [ref=f2e172]:
+                - paragraph [ref=f2e173]: Backrooms
+                - generic [ref=f2e174]:
+                  - generic [ref=f2e175]: "2026"
+                  - generic [ref=f2e176]: ★ 7.1
+          - link "Poster de Rosebush Pruning Rosebush Pruning 2026 ★ 6.1" [ref=f2e177] [cursor=pointer]:
+            - /url: /pelicula/1130948
+            - generic [ref=f2e178]:
+              - img "Poster de Rosebush Pruning" [ref=f2e180]
+              - generic [ref=f2e181]:
+                - paragraph [ref=f2e182]: Rosebush Pruning
+                - generic [ref=f2e183]:
+                  - generic [ref=f2e184]: "2026"
+                  - generic [ref=f2e185]: ★ 6.1
+          - 'link "Poster de Posesión infernal: En llamas Posesión infernal: En llamas 2026 ★ 7.8" [ref=f2e186] [cursor=pointer]':
+            - /url: /pelicula/1212763
+            - generic [ref=f2e187]:
+              - 'img "Poster de Posesión infernal: En llamas" [ref=f2e189]'
+              - generic [ref=f2e190]:
+                - paragraph [ref=f2e191]: "Posesión infernal: En llamas"
+                - generic [ref=f2e192]:
+                  - generic [ref=f2e193]: "2026"
+                  - generic [ref=f2e194]: ★ 7.8
+          - link "Poster de La muerte de Robin Hood La muerte de Robin Hood 2026 ★ 6.3" [ref=f2e195] [cursor=pointer]:
+            - /url: /pelicula/1284465
+            - generic [ref=f2e196]:
+              - img "Poster de La muerte de Robin Hood" [ref=f2e198]
+              - generic [ref=f2e199]:
+                - paragraph [ref=f2e200]: La muerte de Robin Hood
+                - generic [ref=f2e201]:
+                  - generic [ref=f2e202]: "2026"
+                  - generic [ref=f2e203]: ★ 6.3
+  - alert [ref=f2e204]
