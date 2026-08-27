@@ -1,7 +1,7 @@
 # Guion de clase — Workshop de Next.js + Node
 
 > Este archivo es para vos, no para los estudiantes. Ellos siguen
-> [`next-workshop-v2.md`](./next-workshop-v2.md), que tiene los mismos 9 pasos
+> [`next-workshop.md`](./next-workshop.md), que tiene los mismos 9 pasos
 > con la misma numeración.
 >
 > **Leyenda:** ⏱ tiempo · 📝 qué pegar · 🎙 qué decir · 🖥 qué mostrar ·

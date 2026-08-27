@@ -1,7 +1,7 @@
 # Workshop de Docker
 
 En este workshop vamos a meter en contenedores la app que construimos en el
-[workshop de Next](./next-workshop-v2.md).
+[workshop de Next](./next-workshop.md).
 
 Hoy la app corre así: el `npm run dev` en tu máquina y un Postgres en un
 contenedor. Al terminar, **todo** va a levantar con un solo comando, en
