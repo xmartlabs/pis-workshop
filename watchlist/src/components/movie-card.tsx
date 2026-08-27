@@ -1,0 +1,54 @@
+import Image from "next/image";
+import Link from "next/link";
+
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { posterUrl, releaseYear, type Movie } from "@/lib/movies";
+
+// Ojo: este componente NO tiene "use client" arriba, pero tampoco es
+// exclusivamente de server. Es presentacional: recibe datos y dibuja.
+// Como lo usamos adentro de <MovieFilter>, que si es cliente, Next lo compila
+// como parte del bundle del cliente. La regla es simple: un componente sin
+// directiva se adapta a quien lo use.
+export function MovieCard({ movie }: { movie: Movie }) {
+  const poster = posterUrl(movie.poster_path, "w500");
+  const year = releaseYear(movie.release_date);
+
+  return (
+    <Link href={`/pelicula/${movie.id}`} className="group">
+      <Card className="h-full overflow-hidden py-0 transition-shadow group-hover:shadow-md">
+        <div className="bg-muted relative aspect-[2/3]">
+          {poster ? (
+            // next/image optimiza el tamano y el formato de la imagen, y le
+            // reserva el espacio para que la pagina no salte al cargar.
+            <Image
+              src={poster}
+              alt={`Poster de ${movie.title}`}
+              fill
+              sizes="(max-width: 768px) 50vw, 20vw"
+              className="object-cover"
+            />
+          ) : (
+            <div className="text-muted-foreground flex h-full items-center justify-center text-xs">
+              sin poster
+            </div>
+          )}
+        </div>
+
+        <CardContent className="space-y-1 px-3 pt-1 pb-3">
+          <p className="line-clamp-2 text-sm leading-tight font-medium">
+            {movie.title}
+          </p>
+          <div className="flex items-center gap-2">
+            {year ? (
+              <span className="text-muted-foreground text-xs">{year}</span>
+            ) : null}
+            <Badge variant="secondary" className="text-xs">
+              ★ {movie.vote_average.toFixed(1)}
+            </Badge>
+          </div>
+        </CardContent>
+      </Card>
+    </Link>
+  );
+}
