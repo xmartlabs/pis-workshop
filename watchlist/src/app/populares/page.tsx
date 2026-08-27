@@ -9,7 +9,7 @@ export const revalidate = 3600;
 
 // Fijate que el componente es `async` y hace `await` directo adentro. No hay
 // useState, no hay useEffect, no hay estado de "cargando": cuando el HTML
-// llega al browser, las peliculas ya estan en el.
+// llega al browser, las películas ya están en él.
 export default async function PopularesPage() {
   const movies = await getPopularMovies();
 
@@ -17,18 +17,18 @@ export default async function PopularesPage() {
     <div className="space-y-6">
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">
-          Peliculas populares
+          Películas populares
         </h1>
         <p className="text-muted-foreground text-sm">
-          Estos datos los trajo el server desde TMDB. Abri las herramientas de
-          desarrollo, pestana Network, y recarga: no vas a ver ningun pedido a
+          Estos datos los trajo el server desde TMDB. Abrí las herramientas de
+          desarrollo, pestaña Network, y recargá: no vas a ver ningún pedido a
           TMDB. Ya venia todo en el HTML.
         </p>
         <RenderStamp mode="ISR" />
       </header>
 
-      {/* El filtro es un componente cliente. Le pasamos las peliculas ya
-          resueltas como prop: eso es el limite server -> cliente. */}
+      {/* El filtro es un componente cliente. Le pasamos las películas ya
+          resueltas como prop: eso es el límite server -> cliente. */}
       <MovieFilter movies={movies} />
     </div>
   );

@@ -9,7 +9,7 @@ import type { MovieDetail } from "@/lib/movies";
 
 export function AddToWatchlistForm({ movie }: { movie: MovieDetail }) {
   // useActionState conecta el formulario con la Server Action y nos guarda
-  // lo que la action devolvio, para poder mostrar un mensaje.
+  // lo que la action devolvió, para poder mostrar un mensaje.
   const [state, formAction] = useActionState<ActionState, FormData>(
     addToWatchlist,
     null,
@@ -17,8 +17,8 @@ export function AddToWatchlistForm({ movie }: { movie: MovieDetail }) {
 
   return (
     <form action={formAction} className="space-y-2">
-      {/* Mandamos los datos de la pelicula en campos ocultos para no tener
-          que volver a pedirselos a TMDB del lado del server. */}
+      {/* Mandamos los datos de la película en campos ocultos para no tener
+          que volver a pedírselos a TMDB del lado del server. */}
       <input type="hidden" name="movieId" value={movie.id} />
       <input type="hidden" name="title" value={movie.title} />
       <input type="hidden" name="posterPath" value={movie.poster_path ?? ""} />
@@ -47,7 +47,7 @@ export function AddToWatchlistForm({ movie }: { movie: MovieDetail }) {
 }
 
 // useFormStatus solo funciona en un componente que este ADENTRO del <form>.
-// Por eso el boton es un componente aparte y no parte del de arriba.
+// Por eso el botón es un componente aparte y no parte del de arriba.
 function SubmitButton() {
   const { pending } = useFormStatus();
 

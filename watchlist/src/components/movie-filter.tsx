@@ -6,10 +6,10 @@ import { MovieCard } from "@/components/movie-card";
 import { Input } from "@/components/ui/input";
 import type { Movie } from "@/lib/movies";
 
-// "use client" marca el limite: de aca para abajo el codigo tambien viaja al
+// "use client" marca el límite: de acá para abajo el código también viaja al
 // browser y puede usar estado, eventos y APIs del navegador.
 //
-// Las peliculas NO se piden aca. Ya vinieron listas desde el server, como una
+// Las películas NO se piden acá. Ya vinieron listas desde el server, como una
 // prop. Este componente solo agrega interactividad encima de esos datos.
 export function MovieFilter({ movies }: { movies: Movie[] }) {
   const [query, setQuery] = useState("");
@@ -50,7 +50,7 @@ export function MovieFilter({ movies }: { movies: Movie[] }) {
 }
 
 // Este reloj corre EN EL BROWSER y se actualiza solo cada segundo.
-// Compara con el <RenderStamp/> de arriba, que quedo congelado en el build:
+// Compará con el <RenderStamp/> de arriba, que quedó congelado en el build:
 // esa es la diferencia entre renderizar en el server y en el cliente.
 function ClientClock() {
   const [hora, setHora] = useState<string | null>(null);
@@ -62,9 +62,9 @@ function ClientClock() {
     return () => clearInterval(id);
   }, []);
 
-  // En el primer render (el del server) devolvemos null. Si pintaramos la hora
-  // directo, el HTML del server y el del browser no coincidirian y React
-  // tiraria un error de hidratacion.
+  // En el primer render (el del server) devolvemos null. Si pintáramos la hora
+  // directo, el HTML del server y el del browser no coincidirían y React
+  // tiraría un error de hidratación.
   if (!hora) return null;
 
   return (

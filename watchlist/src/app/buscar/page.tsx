@@ -5,8 +5,8 @@ import { RenderStamp } from "@/components/render-stamp";
 import { SearchBox } from "@/components/search-box";
 import { searchMovies } from "@/lib/tmdb";
 
-// Esta pagina lee `searchParams`, o sea que depende del request. Next no puede
-// generarla en el build (no sabe que va a buscar la gente), asi que la arma
+// Esta página lee `searchParams`, o sea que depende del request. Next no puede
+// generarla en el build (no sabe que va a buscar la gente), así que la arma
 // entera en cada visita. Eso es SSR.
 //
 // `searchParams` es una Promise: hay que await-earla.
@@ -23,7 +23,7 @@ export default async function BuscarPage({
       <header className="space-y-2">
         <h1 className="text-2xl font-semibold tracking-tight">Buscar</h1>
         <p className="text-muted-foreground text-sm">
-          Recarga esta pagina con F5 y mira el reloj: cambia siempre, porque el
+          Recarga esta página con F5 y mira el reloj: cambia siempre, porque el
           HTML se genera de nuevo en cada visita.
         </p>
         <RenderStamp mode="SSR" />
@@ -41,7 +41,7 @@ export default async function BuscarPage({
         </p>
       ) : (
         <p className="text-muted-foreground text-sm">
-          Escribi algo arriba para buscar en TMDB.
+          Escribí algo arriba para buscar en TMDB.
         </p>
       )}
 

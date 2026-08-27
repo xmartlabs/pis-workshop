@@ -14,7 +14,7 @@ export function SearchBox() {
   function buscar(evento: React.FormEvent) {
     evento.preventDefault();
     // Cambiamos la URL. Como /buscar lee `searchParams` en el server, Next
-    // vuelve a renderizar la pagina alla y nos manda el HTML nuevo.
+    // vuelve a renderizar la página allá y nos manda el HTML nuevo.
     router.push(`/buscar?q=${encodeURIComponent(valor)}`);
   }
 
@@ -23,7 +23,7 @@ export function SearchBox() {
       <Input
         value={valor}
         onChange={(evento) => setValor(evento.target.value)}
-        placeholder="Titulo de una pelicula…"
+        placeholder="Título de una película…"
       />
       <Button type="submit">Buscar</Button>
     </form>

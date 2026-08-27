@@ -1,8 +1,8 @@
 import { Skeleton } from "@/components/ui/skeleton";
 
-// Si un archivo se llama loading.tsx, Next lo muestra automaticamente mientras
-// la pagina de al lado todavia esta cargando sus datos. No hay que escribir
-// ningun if (cargando) en ningun lado.
+// Si un archivo se llama loading.tsx, Next lo muestra automáticamente mientras
+// la página de al lado todavia esta cargando sus datos. No hay que escribir
+// ningún if (cargando) en ningún lado.
 export default function Loading() {
   return (
     <div className="grid gap-8 sm:grid-cols-[220px_1fr]">

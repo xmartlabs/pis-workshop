@@ -8,8 +8,8 @@ const adapter = new PrismaPg({
   connectionString: process.env.DATABASE_URL,
 });
 
-// En desarrollo Next recarga el codigo en caliente muchas veces. Si crearamos
-// un PrismaClient nuevo en cada recarga, abririamos conexiones hasta reventar
+// En desarrollo Next recargá el código en caliente muchas veces. Si crearamos
+// un PrismaClient nuevo en cada recargá, abririamos conexiones hasta reventar
 // la base. Por eso lo guardamos en globalThis y reusamos el mismo.
 const globalForPrisma = globalThis as unknown as {
   prisma: PrismaClient | undefined;

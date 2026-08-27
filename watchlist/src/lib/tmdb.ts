@@ -36,7 +36,7 @@ async function tmdbFetch<T>(
       Authorization: `Bearer ${token}`,
       accept: "application/json",
     },
-    // Aca se decide el tipo de renderizado de la pagina que use este fetch:
+    // Acá se decide el tipo de renderizado de la página que use este fetch:
     //   revalidate: 3600 -> se genera y se reusa por 1 hora (ISR)
     //   revalidate: 0    -> se pide de nuevo en cada request (SSR)
     ...(revalidate === 0
@@ -45,13 +45,13 @@ async function tmdbFetch<T>(
   });
 
   if (!response.ok) {
-    throw new Error(`TMDB respondio ${response.status} para ${path}`);
+    throw new Error(`TMDB respondió ${response.status} para ${path}`);
   }
 
   return response.json() as Promise<T>;
 }
 
-/** Peliculas populares. Cacheadas 1 hora: la pagina es estatica con ISR. */
+/** Películas populares. Cacheadas 1 hora: la página es estática con ISR. */
 export async function getPopularMovies(): Promise<Movie[]> {
   const data = await tmdbFetch<MovieListResponse>(
     "/movie/popular?language=es-ES&page=1",
@@ -60,7 +60,7 @@ export async function getPopularMovies(): Promise<Movie[]> {
   return data.results;
 }
 
-/** Detalle de una pelicula. Cacheado un dia: estos datos casi no cambian. */
+/** Detalle de una película. Cacheado un dia: estos datos casi no cambian. */
 export async function getMovie(id: number): Promise<MovieDetail | null> {
   try {
     return await tmdbFetch<MovieDetail>(`/movie/${id}?language=es-ES`, {

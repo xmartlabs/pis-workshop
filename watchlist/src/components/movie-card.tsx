@@ -15,22 +15,22 @@ export function MovieCard({ movie }: { movie: Movie }) {
   const year = releaseYear(movie.release_date);
 
   return (
-    <Link href={`/pelicula/${movie.id}`} className="group">
+    <Link href={`/película/${movie.id}`} className="group">
       <Card className="h-full overflow-hidden py-0 transition-shadow group-hover:shadow-md">
         <div className="bg-muted relative aspect-[2/3]">
           {poster ? (
-            // next/image optimiza el tamano y el formato de la imagen, y le
-            // reserva el espacio para que la pagina no salte al cargar.
+            // next/image optimiza el tamaño y el formato de la imagen, y le
+            // reserva el espacio para que la página no salte al cargar.
             <Image
               src={poster}
-              alt={`Poster de ${movie.title}`}
+              alt={`Póster de ${movie.title}`}
               fill
               sizes="(max-width: 768px) 50vw, 20vw"
               className="object-cover"
             />
           ) : (
             <div className="text-muted-foreground flex h-full items-center justify-center text-xs">
-              sin poster
+              sin póster
             </div>
           )}
         </div>

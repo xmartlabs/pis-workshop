@@ -3,7 +3,7 @@ import Link from "next/link";
 import { RenderStamp } from "@/components/render-stamp";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-// Esta pagina no pide datos a nadie. Next se da cuenta y la genera UNA vez,
+// Esta página no pide datos a nadie. Next se da cuenta y la genera UNA vez,
 // durante `npm run build`. Despues cada visita recibe ese HTML ya hecho.
 // Por eso el reloj de abajo queda congelado por mas que recargues.
 
@@ -20,7 +20,7 @@ const modos = [
     titulo: "Buscar",
     sigla: "SSR",
     detalle:
-      "Depende de lo que escribas en la URL, asi que se arma en cada request.",
+      "Depende de lo que escribas en la URL, así que se arma en cada request.",
   },
   {
     href: "/watchlist",
@@ -40,7 +40,7 @@ export default function HomePage() {
         </h1>
         <p className="text-muted-foreground max-w-2xl">
           Una app chiquita para ver, en vivo, las tres formas que tiene Next de
-          armar una pagina. Los datos salen de la API de TMDB y tu watchlist
+          armar una página. Los datos salen de la API de TMDB y tu watchlist
           vive en una base Postgres.
         </p>
         <RenderStamp mode="SSG" />
@@ -67,7 +67,7 @@ export default function HomePage() {
       <section className="bg-muted/40 rounded-lg border p-5">
         <h2 className="mb-2 font-medium">El experimento</h2>
         <p className="text-muted-foreground text-sm">
-          Abri esta pagina y <code>/buscar</code> en dos pestanas y apreta F5 en
+          Abrí esta página y <code>/buscar</code> en dos pestañas y apretá F5 en
           las dos. El reloj de esta se queda quieto; el de la otra cambia
           siempre. Ahi esta, en una linea, toda la diferencia entre generar el
           HTML una vez y generarlo en cada visita.

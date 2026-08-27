@@ -1,6 +1,6 @@
-// "use server" convierte a cada funcion exportada de este archivo en una
-// Server Action: codigo que corre SIEMPRE en el server, pero que un componente
-// cliente puede llamar como si fuera una funcion local.
+// "use server" convierte a cada función exportada de este archivo en una
+// Server Action: código que corre SIEMPRE en el server, pero que un componente
+// cliente puede llamar como si fuera una función local.
 //
 // Next se encarga por debajo del fetch, del POST y de serializar los datos.
 // Nunca escribimos un endpoint, ni una URL, ni un JSON.parse.
@@ -16,10 +16,10 @@ export type ActionState = {
 } | null;
 
 /**
- * Agrega una pelicula a la watchlist.
+ * Agrega una película a la watchlist.
  *
  * La firma (estadoAnterior, formData) es la que espera el hook
- * `useActionState`: recibe el estado que devolvio la ejecucion anterior y el
+ * `useActionState`: recibe el estado que devolvió la ejecución anterior y el
  * contenido del formulario.
  */
 export async function addToWatchlist(
@@ -30,7 +30,7 @@ export async function addToWatchlist(
   const title = String(formData.get("title") ?? "");
 
   if (!movieId || !title) {
-    return { ok: false, message: "Faltan datos de la pelicula." };
+    return { ok: false, message: "Faltan datos de la película." };
   }
 
   const voteAverage = Number(formData.get("voteAverage"));
@@ -46,19 +46,19 @@ export async function addToWatchlist(
       },
     });
   } catch {
-    // El campo movieId es @unique en el schema, asi que si ya estaba
+    // El campo movieId es @unique en el schema, así que si ya estaba
     // guardada Prisma tira error. Lo tratamos como un caso normal.
-    return { ok: false, message: "Esa pelicula ya estaba en tu watchlist." };
+    return { ok: false, message: "Esa película ya estaba en tu watchlist." };
   }
 
-  // Le avisamos a Next que el HTML cacheado de /watchlist quedo viejo.
-  // Sin esta linea la lista seguiria mostrando los datos anteriores.
+  // Le avisamos a Next que el HTML cacheado de /watchlist quedó viejo.
+  // Sin esta linea la lista seguiría mostrando los datos anteriores.
   revalidatePath("/watchlist");
 
   return { ok: true, message: `"${title}" agregada.` };
 }
 
-/** Marca o desmarca una pelicula como vista. */
+/** Marca o desmarca una película como vista. */
 export async function toggleWatched(id: number, watched: boolean) {
   await prisma.watchlistItem.update({
     where: { id },
@@ -68,7 +68,7 @@ export async function toggleWatched(id: number, watched: boolean) {
   revalidatePath("/watchlist");
 }
 
-/** Saca una pelicula de la watchlist. */
+/** Saca una película de la watchlist. */
 export async function removeFromWatchlist(id: number) {
   await prisma.watchlistItem.delete({ where: { id } });
 

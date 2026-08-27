@@ -7,10 +7,10 @@ import { posterUrl, releaseYear } from "@/lib/movies";
 import { getMovie, getPopularMovies } from "@/lib/tmdb";
 
 // generateStaticParams le dice a Next que ids conoce de antemano, para que
-// genere esas paginas durante el build. Las 20 populares quedan listas.
+// genere esas páginas durante el build. Las 20 populares quedan listas.
 //
-// Si alguien entra a una pelicula que NO esta en esta lista, Next la genera en
-// ese momento y la guarda para el proximo. Eso tambien es ISR.
+// Si alguien entra a una película que NO esta en esta lista, Next la genera en
+// ese momento y la guarda para el próximo. Eso también es ISR.
 export async function generateStaticParams() {
   const movies = await getPopularMovies();
 
@@ -19,7 +19,7 @@ export async function generateStaticParams() {
   }));
 }
 
-// Esto arma el <title> de la pestana y los metadatos para compartir el link.
+// Esto arma el <title> de la pestaña y los metadatos para compartir el link.
 export async function generateMetadata({
   params,
 }: {
@@ -29,7 +29,7 @@ export async function generateMetadata({
   const movie = await getMovie(Number(id));
 
   return {
-    title: movie ? `${movie.title} · Watchlist` : "Pelicula no encontrada",
+    title: movie ? `${movie.title} · Watchlist` : "Película no encontrada",
   };
 }
 
@@ -39,7 +39,7 @@ export default async function PeliculaPage({
   params: Promise<{ id: string }>;
 }) {
   // En Next 16 `params` es una Promise. Si te olvidas del await, `id` sale
-  // undefined y la pagina explota.
+  // undefined y la página explota.
   const { id } = await params;
   const movie = await getMovie(Number(id));
 
@@ -56,7 +56,7 @@ export default async function PeliculaPage({
           {poster ? (
             <Image
               src={poster}
-              alt={`Poster de ${movie.title}`}
+              alt={`Póster de ${movie.title}`}
               fill
               sizes="220px"
               className="object-cover"
@@ -99,7 +99,7 @@ export default async function PeliculaPage({
             <p className="text-sm leading-relaxed">{movie.overview}</p>
           ) : (
             <p className="text-muted-foreground text-sm">
-              TMDB no tiene sinopsis en espanol para esta.
+              TMDB no tiene sinopsis en español para esta.
             </p>
           )}
 
@@ -107,10 +107,10 @@ export default async function PeliculaPage({
         </div>
       </div>
 
-      {/* Aca NO ponemos un <RenderStamp/>. Toda Server Action vuelve a
-          renderizar la pagina en la que estas, asi que el reloj se
-          actualizaria al agregar la pelicula y parecerian datos frescos
-          cuando en realidad la pagina si es estatica. Los relojes viven en
+      {/* Acá NO ponemos un <RenderStamp/>. Toda Server Action vuelve a
+          renderizar la página en la que estas, así que el reloj se
+          actualizaria al agregar la película y parecerian datos frescos
+          cuando en realidad la página si es estática. Los relojes viven en
           /populares y /buscar, que es donde la comparacion es honesta. */}
     </article>
   );

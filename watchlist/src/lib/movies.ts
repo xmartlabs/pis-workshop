@@ -1,5 +1,5 @@
-// Tipos y helpers de peliculas que SI pueden viajar al browser.
-// Aca no hay ningun secreto: solo formas de datos y armado de URLs.
+// Tipos y helpers de películas que SI pueden viajar al browser.
+// Acá no hay ningún secreto: solo formas de datos y armado de URLs.
 
 export type Movie = {
   id: number;

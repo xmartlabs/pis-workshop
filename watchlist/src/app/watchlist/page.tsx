@@ -1,7 +1,7 @@
 import { WatchlistItem } from "@/components/watchlist-item";
 import { prisma } from "@/lib/prisma";
 
-// Tu watchlist cambia cuando vos la cambias, asi que no tiene sentido
+// Tu watchlist cambia cuando vos la cambias, así que no tiene sentido
 // congelarla en el build: la armamos en cada visita.
 export const dynamic = "force-dynamic";
 
@@ -28,11 +28,11 @@ export default async function WatchlistPage() {
       {items.length === 0 ? (
         <div className="rounded-lg border border-dashed p-10 text-center">
           <p className="text-muted-foreground text-sm">
-            Todavia no agregaste nada. Anda a{" "}
+            Todavía no agregaste nada. Andá a{" "}
             <a href="/populares" className="underline">
               Populares
             </a>
-            , entra a una pelicula y agregala.
+            , entra a una película y agregala.
           </p>
         </div>
       ) : (
