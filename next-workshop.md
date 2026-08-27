@@ -881,7 +881,36 @@ Si un archivo se llama `loading.tsx`, Next lo muestra **automáticamente**
 mientras la página de al lado carga sus datos. No hay que escribir ningún
 `if (cargando)` en ningún lado.
 
-> 🔍 Probá una que no exista: [/pelicula/999999999](http://localhost:3000/pelicula/999999999).
+Y falta uno más, en la **raíz** de `app/`. Creá `src/app/not-found.tsx`:
+
+```tsx
+import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
+
+export default function NotFound() {
+  return (
+    <div className="space-y-4 py-16 text-center">
+      <h1 className="text-2xl font-semibold">Esta página no existe</h1>
+      <p className="text-muted-foreground text-sm">
+        Puede que el link esté mal escrito.
+      </p>
+      <Button asChild variant="outline">
+        <Link href="/">Ir al inicio</Link>
+      </Button>
+    </div>
+  );
+}
+```
+
+> ⚠️ **Esto no es opcional y no es obvio.** El `not-found.tsx` de la raíz atiende
+> las URLs que no existen, pero además **es lo que hace que funcionen los
+> `not-found.tsx` de las secciones**. Si no lo creás, el de `pelicula/[id]` se
+> ignora en silencio y Next muestra su 404 por defecto.
+
+> 🔍 Probá las dos: [/pelicula/999999999](http://localhost:3000/pelicula/999999999)
+> te tiene que mostrar "Esa película no existe", y
+> [/ruta-que-no-existe](http://localhost:3000/ruta-que-no-existe) el 404 general.
 
 ---
 
@@ -1343,6 +1372,7 @@ Y para los datos:
 | `ECONNREFUSED` al abrir `/watchlist` | Postgres no está levantado → `docker compose up -d db` |
 | El contenedor arranca y se muere | El volumen apunta a `/var/lib/postgresql/data`. Sacale el `/data` |
 | El build falla por `useSearchParams` | Falta envolverlo en `<Suspense>` |
+| Sale el 404 feo de Next en vez del tuyo | Falta `src/app/not-found.tsx` en la raíz |
 | Prisma tira errores raros de tipos | Faltó `npx prisma generate` |
 | Un cartel te ofrece Prisma 8 | Ignoralo, quedate en la 7.10.0 |
 

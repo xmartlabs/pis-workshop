@@ -258,8 +258,8 @@ faltó el `"use client"` arriba de todo, antes de los imports.
 
 📄 *Guía: Paso 5*
 
-📝 **Pegá:** `src/app/pelicula/[id]/page.tsx`, `loading.tsx`, `not-found.tsx`, y
-`getMovie` en `tmdb.ts`.
+📝 **Pegá:** `src/app/pelicula/[id]/page.tsx`, `loading.tsx`, `not-found.tsx`,
+**`src/app/not-found.tsx`** (el de la raíz) y `getMovie` en `tmdb.ts`.
 
 🎙 **Decí:**
 - "Los corchetes en el nombre de la carpeta la vuelven un parámetro."
@@ -274,12 +274,18 @@ faltó el `"use client"` arriba de todo, antes de los imports.
   la página carga. **No escribimos ni un `if (cargando)`.**"
 
 🖥 **Mostrá:** entrá a [/pelicula/999999999](http://localhost:3000/pelicula/999999999)
-y que vean el `not-found.tsx`.
+y que vean el 404 de películas. Después a `/una-ruta-cualquiera` y que vean que
+sale otro distinto, el general.
 
 ❓ **Preguntá:** "¿cuántas páginas de detalle se van a generar en el build?"
 → 20. Y en el Paso 8 lo vamos a ver escrito en la tabla.
 
-⚠️ **Si se rompe:** `id` es `undefined` → falta el `await params`.
+⚠️ **Si se rompe:**
+
+| Síntoma | Arreglo |
+|---|---|
+| `id` es `undefined` | Falta el `await params` |
+| Sale el 404 gris de Next en vez del suyo | **Falta `src/app/not-found.tsx` en la raíz.** El de la sección solo funciona si existe el de la raíz. Es un comportamiento que no está documentado de forma evidente y no avisa: falla en silencio |
 
 ---
 
