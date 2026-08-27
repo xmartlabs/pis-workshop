@@ -8,7 +8,10 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
+      # Ojo: en Postgres 18+ el volumen va montado en /var/lib/postgresql,
+      # NO en /var/lib/postgresql/data como muestran casi todos los tutoriales.
+      # Con la ruta vieja el contenedor arranca y se muere al instante.
+      - pgdata:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d watchlist"]
       interval: 5s
