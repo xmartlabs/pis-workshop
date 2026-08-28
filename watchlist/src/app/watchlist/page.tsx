@@ -1,13 +1,14 @@
 import { WatchlistItem } from "@/components/watchlist-item";
 import { prisma } from "@/lib/prisma";
 
-// Tu watchlist cambia cuando vos la cambias, así que no tiene sentido
-// congelarla en el build: la armamos en cada visita.
+// Tu watchlist cambia cuando el usuario agrega o saca películas, así que no podemos
+// congelarla en el build, por lo tanto la armamos en cada visita
 export const dynamic = "force-dynamic";
 
 export default async function WatchlistPage() {
-  // Consulta directa a Postgres desde el componente. Sin fetch, sin endpoint,
-  // sin useEffect. Esto corre en el server y nunca llega al browser.
+  // Consulta directa a Postgres desde el componente. Sin fetch, sin endpoint.
+  // Les dejo esto acá para que vean que se puede, pero en la práctica 
+  // conviene separar la consulta a la DB en un archivo aparte 
   const items = await prisma.watchlistItem.findMany({
     orderBy: { createdAt: "desc" },
   });

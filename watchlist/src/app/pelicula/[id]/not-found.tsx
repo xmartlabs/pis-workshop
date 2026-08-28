@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
-// Se muestra cuando la página llama a notFound().
 export default function NotFound() {
   return (
     <div className="space-y-4 py-16 text-center">

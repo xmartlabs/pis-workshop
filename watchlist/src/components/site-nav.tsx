@@ -17,8 +17,6 @@ export function SiteNav() {
         <ul className="flex gap-4 text-sm">
           {links.slice(1).map((link) => (
             <li key={link.href}>
-              {/* next/link navega sin recargar la página entera: solo pide
-                  la parte que cambia. Con un <a> normal perderias eso. */}
               <Link
                 href={link.href}
                 className="text-muted-foreground hover:text-foreground transition-colors"

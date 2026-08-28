@@ -5,11 +5,6 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { posterUrl, releaseYear, type Movie } from "@/lib/movies";
 
-// Ojo: este componente NO tiene "use client" arriba, pero tampoco es
-// exclusivamente de server. Es presentacional: recibe datos y dibuja.
-// Como lo usamos adentro de <MovieFilter>, que si es cliente, Next lo compila
-// como parte del bundle del cliente. La regla es simple: un componente sin
-// directiva se adapta a quien lo use.
 export function MovieCard({ movie }: { movie: Movie }) {
   const poster = posterUrl(movie.poster_path, "w500");
   const year = releaseYear(movie.release_date);
@@ -19,8 +14,6 @@ export function MovieCard({ movie }: { movie: Movie }) {
       <Card className="h-full overflow-hidden py-0 transition-shadow group-hover:shadow-md">
         <div className="bg-muted relative aspect-[2/3]">
           {poster ? (
-            // next/image optimiza el tamaño y el formato de la imagen, y le
-            // reserva el espacio para que la página no salte al cargar.
             <Image
               src={poster}
               alt={`Póster de ${movie.title}`}

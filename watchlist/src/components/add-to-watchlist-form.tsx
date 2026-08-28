@@ -1,59 +1,51 @@
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { type SubmitEvent, useState } from "react";
 
-import { addToWatchlist, type ActionState } from "@/actions/watchlist";
+import { addToWatchlist, type ActionResult } from "@/actions/watchlist";
 import { Button } from "@/components/ui/button";
 import type { MovieDetail } from "@/lib/movies";
 
 export function AddToWatchlistForm({ movie }: { movie: MovieDetail }) {
-  // useActionState conecta el formulario con la Server Action y nos guarda
-  // lo que la action devolvió, para poder mostrar un mensaje.
-  const [state, formAction] = useActionState<ActionState, FormData>(
-    addToWatchlist,
-    null,
-  );
+  const [guardando, setGuardando] = useState(false);
+  const [resultado, setResultado] = useState<ActionResult | null>(null);
+
+  async function alEnviar(evento: SubmitEvent<HTMLFormElement>) {
+    evento.preventDefault();
+
+    setGuardando(true);
+    setResultado(null);
+
+    // `addToWatchlist` corre en el server, pero se llama como cualquier función async
+    const respuesta = await addToWatchlist({
+      movieId: movie.id,
+      title: movie.title,
+      posterPath: movie.poster_path,
+      releaseDate: movie.release_date,
+      voteAverage: movie.vote_average,
+    });
+
+    setResultado(respuesta);
+    setGuardando(false);
+  }
 
   return (
-    <form action={formAction} className="space-y-2">
-      {/* Mandamos los datos de la película en campos ocultos para no tener
-          que volver a pedírselos a TMDB del lado del server. */}
-      <input type="hidden" name="movieId" value={movie.id} />
-      <input type="hidden" name="title" value={movie.title} />
-      <input type="hidden" name="posterPath" value={movie.poster_path ?? ""} />
-      <input
-        type="hidden"
-        name="releaseDate"
-        value={movie.release_date ?? ""}
-      />
-      <input type="hidden" name="voteAverage" value={movie.vote_average} />
+    <form onSubmit={alEnviar} className="space-y-2">
+      <Button type="submit" disabled={guardando}>
+        {guardando ? "Guardando…" : "Agregar a mi watchlist"}
+      </Button>
 
-      <SubmitButton />
-
-      {state ? (
+      {resultado ? (
         <p
           className={
-            state.ok
+            resultado.ok
               ? "text-sm text-green-600 dark:text-green-500"
               : "text-destructive text-sm"
           }
         >
-          {state.message}
+          {resultado.message}
         </p>
       ) : null}
     </form>
-  );
-}
-
-// useFormStatus solo funciona en un componente que este ADENTRO del <form>.
-// Por eso el botón es un componente aparte y no parte del de arriba.
-function SubmitButton() {
-  const { pending } = useFormStatus();
-
-  return (
-    <Button type="submit" disabled={pending}>
-      {pending ? "Guardando…" : "Agregar a mi watchlist"}
-    </Button>
   );
 }

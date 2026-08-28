@@ -1,6 +1,3 @@
-// Esta linea es un seguro: si alguien importa este archivo desde un componente
-// cliente, el build FALLA con un mensaje claro en vez de mandar el token al
-// browser sin que nos demos cuenta.
 import "server-only";
 
 import type { Movie, MovieDetail } from "@/lib/movies";
@@ -36,9 +33,6 @@ async function tmdbFetch<T>(
       Authorization: `Bearer ${token}`,
       accept: "application/json",
     },
-    // Acá se decide el tipo de renderizado de la página que use este fetch:
-    //   revalidate: 3600 -> se genera y se reusa por 1 hora (ISR)
-    //   revalidate: 0    -> se pide de nuevo en cada request (SSR)
     ...(revalidate === 0
       ? { cache: "no-store" as const }
       : { next: { revalidate } }),
@@ -51,7 +45,6 @@ async function tmdbFetch<T>(
   return response.json() as Promise<T>;
 }
 
-/** Películas populares. Cacheadas 1 hora: la página es estática con ISR. */
 export async function getPopularMovies(): Promise<Movie[]> {
   const data = await tmdbFetch<MovieListResponse>(
     "/movie/popular?language=es-ES&page=1",
@@ -60,7 +53,6 @@ export async function getPopularMovies(): Promise<Movie[]> {
   return data.results;
 }
 
-/** Detalle de una película. Cacheado un dia: estos datos casi no cambian. */
 export async function getMovie(id: number): Promise<MovieDetail | null> {
   try {
     return await tmdbFetch<MovieDetail>(`/movie/${id}?language=es-ES`, {
@@ -71,7 +63,6 @@ export async function getMovie(id: number): Promise<MovieDetail | null> {
   }
 }
 
-/** Busqueda. Sin cache: cada request trae resultados frescos (SSR). */
 export async function searchMovies(query: string): Promise<Movie[]> {
   if (!query.trim()) return [];
 

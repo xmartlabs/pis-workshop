@@ -8,9 +8,6 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      # Ojo: en Postgres 18+ el volumen va montado en /var/lib/postgresql,
-      # NO en /var/lib/postgresql/data como muestran casi todos los tutoriales.
-      # Con la ruta vieja el contenedor arranca y se muere al instante.
       - pgdata:/var/lib/postgresql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres -d watchlist"]
@@ -18,8 +15,6 @@ services:
       timeout: 5s
       retries: 10
 
-  # Servicio de un solo uso: aplica las migraciones y termina.
-  # Usa la etapa "deps", que tiene el CLI de Prisma pero no el build de Next.
   migrate:
     build:
       context: .
@@ -39,8 +34,6 @@ services:
     ports:
       - "3000:3000"
     environment:
-      # Adentro de la red de Docker la base no esta en localhost: esta en "db",
-      # que es el nombre del servicio de arriba.
       DATABASE_URL: postgresql://postgres:postgres@db:5432/watchlist?schema=public
       TMDB_ACCESS_TOKEN: ${TMDB_ACCESS_TOKEN}
     depends_on:

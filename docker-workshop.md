@@ -35,6 +35,22 @@ código ya compilado **más solo las dependencias que realmente se usan**.
 Esa línea es la diferencia entre una imagen de más de 1GB y una de ~300MB. Al
 final del workshop lo vas a ver medido.
 
+> ⚠️ **Este paso no es opcional.** El `Dockerfile` del paso siguiente copia
+> `.next/standalone`, que no existe si no agregás esta línea. Sin ella la build
+> de Docker falla con un error de `COPY`.
+
+> ⚠️ **Y ojo con el efecto colateral:** con `output: "standalone"`, el comando
+> `npm start` **deja de funcionar** (Next te avisa por consola y sirve una página
+> incompleta). A partir de ahora, para correr la app en modo producción fuera de
+> Docker, el comando es:
+>
+> ```sh
+> node .next/standalone/server.js
+> ```
+>
+> Por eso esta línea no viene puesta desde el workshop de Next: ahí `npm start`
+> se usa para comparar el renderizado estático contra el dinámico.
+
 ---
 
 ## Paso 2 — El Dockerfile

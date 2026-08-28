@@ -18,9 +18,6 @@ export type WatchlistItemData = {
 export function WatchlistItem({ item }: { item: WatchlistItemData }) {
   const [isPending, startTransition] = useTransition();
 
-  // useOptimistic nos deja pintar el resultado ANTES de que el server conteste.
-  // Si la action falla, React vuelve solo al valor real. Sin esto, el checkbox
-  // se quedaria quieto un instante hasta que vuelva la respuesta.
   const [vistaOptimista, setVistaOptimista] = useOptimistic(item.watched);
 
   function alMarcar(nuevoValor: boolean) {

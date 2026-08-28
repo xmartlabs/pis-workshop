@@ -8,7 +8,6 @@ import { getMovie, getPopularMovies } from "@/lib/tmdb";
 
 // generateStaticParams le dice a Next que ids conoce de antemano, para que
 // genere esas páginas durante el build. Las 20 populares quedan listas.
-//
 // Si alguien entra a una película que NO esta en esta lista, Next la genera en
 // ese momento y la guarda para el próximo. Eso también es ISR.
 export async function generateStaticParams() {
@@ -19,7 +18,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// Esto arma el <title> de la pestaña y los metadatos para compartir el link.
 export async function generateMetadata({
   params,
 }: {
@@ -38,12 +36,9 @@ export default async function PeliculaPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  // En Next 16 `params` es una Promise. Si te olvidas del await, `id` sale
-  // undefined y la página explota.
   const { id } = await params;
   const movie = await getMovie(Number(id));
 
-  // notFound() corta el render y muestra el archivo not-found.tsx.
   if (!movie) notFound();
 
   const poster = posterUrl(movie.poster_path, "w500");
@@ -106,12 +101,6 @@ export default async function PeliculaPage({
           <AddToWatchlistForm movie={movie} />
         </div>
       </div>
-
-      {/* Acá NO ponemos un <RenderStamp/>. Toda Server Action vuelve a
-          renderizar la página en la que estas, así que el reloj se
-          actualizaria al agregar la película y parecerian datos frescos
-          cuando en realidad la página si es estática. Los relojes viven en
-          /populares y /buscar, que es donde la comparacion es honesta. */}
     </article>
   );
 }

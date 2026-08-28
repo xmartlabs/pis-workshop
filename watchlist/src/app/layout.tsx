@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   description: "Workshop de Next.js + Node para PIS",
 };
 
-// El layout envuelve a TODAS las páginas. Se renderiza una sola vez y no se
-// vuelve a montar cuando navegas entre rutas: por eso la barra de arriba no
-// parpadea al cambiar de página.
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html

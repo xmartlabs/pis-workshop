@@ -6,10 +6,10 @@ import { SearchBox } from "@/components/search-box";
 import { searchMovies } from "@/lib/tmdb";
 
 // Esta página lee `searchParams`, o sea que depende del request. Next no puede
-// generarla en el build (no sabe que va a buscar la gente), así que la arma
+// generarla en build time (no sabe que va a buscar la gente), así que la arma
 // entera en cada visita. Eso es SSR.
 //
-// `searchParams` es una Promise: hay que await-earla.
+// `searchParams` es una Promise, hay que awaitearla
 export default async function BuscarPage({
   searchParams,
 }: {
@@ -29,8 +29,6 @@ export default async function BuscarPage({
         <RenderStamp mode="SSR" />
       </header>
 
-      {/* useSearchParams necesita estar adentro de un <Suspense>. Sin esto,
-          Next se queja al hacer el build. */}
       <Suspense fallback={null}>
         <SearchBox />
       </Suspense>

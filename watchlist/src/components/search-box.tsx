@@ -13,8 +13,6 @@ export function SearchBox() {
 
   function buscar(evento: React.FormEvent) {
     evento.preventDefault();
-    // Cambiamos la URL. Como /buscar lee `searchParams` en el server, Next
-    // vuelve a renderizar la página allá y nos manda el HTML nuevo.
     router.push(`/buscar?q=${encodeURIComponent(valor)}`);
   }
 
