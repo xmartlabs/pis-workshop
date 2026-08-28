@@ -1,0 +1,25 @@
+// El schema define las tablas de la base de datos.
+// Cada `model` de acá se convierte en una tabla de Postgres.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model WatchlistItem {
+  id          Int      @id @default(autoincrement())
+  // El id que le da TMDB a la pelicula. Es unico: no queremos la misma dos veces.
+  movieId     Int      @unique
+  title       String
+  posterPath  String?
+  releaseDate String?
+  voteAverage Float?
+  watched     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+
+  @@map("watchlist_items")
+}
